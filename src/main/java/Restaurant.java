@@ -20,10 +20,10 @@ public class Restaurant {
     public boolean isRestaurantOpen() {
         LocalTime currentTime = getCurrentTime();
         boolean flag =false;
-        if(Boolean.parseBoolean(String.valueOf(currentTime.compareTo(closingTime))) && Boolean.parseBoolean(String.valueOf(openingTime.compareTo(currentTime))) ){
-            flag= true;
-        }
-        return flag;
+//        if(Boolean.parseBoolean(String.valueOf(currentTime.compareTo(closingTime))) && Boolean.parseBoolean(String.valueOf(openingTime.compareTo(currentTime))) ){
+//            flag= true;
+//        }
+        return currentTime.isAfter(openingTime) && currentTime.isBefore(closingTime);
         //DELETE ABOVE STATEMENT AND WRITE CODE HERE
     }
 
